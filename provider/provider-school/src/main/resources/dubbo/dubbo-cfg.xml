@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+        xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+        xsi:schemaLocation="
+            http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://code.alibabatech.com/schema/dubbo
+            http://code.alibabatech.com/schema/dubbo/dubbo.xsd
+        "
+>
+
+    <dubbo:application name="provider-school"/>
+
+    <dubbo:protocol port="10102"/>
+
+    <dubbo:registry protocol="zookeeper" address="localhost:2181,localhost:2182,localhost:2183"/>
+
+    <import resource="dubbo-consumer.xml"/>
+
+</beans>
